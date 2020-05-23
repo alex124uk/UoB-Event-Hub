@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+
+
+
+
+<div class="border-UoBPurple">
+    <h2 class="text-center text-UoBPurple font2">Welcome to UoB Event Hub!</h2>
+    <p class="lead text-center font1">UoB Event Hub is the number one place for students and staff to find events happening around the University of Brighton</p>
+  
+</div>
+
+
+@*<hr />*@
+
+
+
+<div class="row">
+    <img class="img-responsive " src="../Images/Brighton1.jpg" style="max-width:100%; height:auto" alt="Card image cap">
+</div>
+                
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="font1">View the events list</h2>
+            <p class="font2">
+                Make use of the UoB Hub event list to find the perfect event for you! With a sleek design and smart filter options its as simple as ever!
+            </p>
+            <button type="button" class="btn btn-outline-UoBPurple ">
+                @Html.ActionLink("Events List", "Index", "Events", new { }, new { @class = "text-UoBPurple font2" })
+            </button>
+        </div>
+        <div class="col-md-4">
+            <h2 class="font1">Created Events</h2>
+            <p class="font2">View all your created events in one click! Allowing to easily view and edit the information about your up coming events!</p>
+            <button type="button" class="btn btn-outline-UoBPurple ">
+                @Html.ActionLink("Created Events", "Index", "MyEvents", new { }, new { @class = "text-UoBPurple font2" })
+            </button>
+        </div>
+
+        <div class="col-md-4">
+            <h2 class="font1">Joined Events</h2>
+            <p class="font2">Quickly view all the events that you have signed up for in one easy click!</p>
+            <button type="button" class="btn btn-outline-UoBPurple ">
+                @Html.ActionLink("Joined Events", "Index", "Attendings", new { }, new { @class = "text-UoBPurple font2" })
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

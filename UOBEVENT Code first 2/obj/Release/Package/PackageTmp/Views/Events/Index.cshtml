@@ -1,0 +1,106 @@
+﻿@model IEnumerable<UOBEVENT_Code_first_2.Models.Event>
+
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+<div class="text-center border-UoBPurple ">
+    <img src="../Images/UoBEventBanner.jpg" class="img-rounded border-UoBPurple" style="width:80%;height:120%" />
+    </div>
+
+<div class="container marginB ">
+    <h2 class="font1 text-center text-UoBPurple">Events at the University of Brighton</h2>
+
+
+    <p class="lead text-center font1">
+        Create your event now! <button type="button" class="btn text-center btn-outline-UoBPurple text-Swhite ">
+            @Html.ActionLink("Host a new event!", "Create")
+        </button>
+    </p>
+
+</div>
+
+    <div class="container table-bordered">
+        <div class="col-md-12 ">
+            @using (Html.BeginForm())
+            {
+                <p>
+                    <h4 class="text-UoBPurple font1">Filter events</h4>
+                    <div class="font2">
+                        Search by name: @Html.TextBox("SearchString")
+                        Category: @Html.DropDownList("Category", "All")
+                        Campus: @Html.DropDownList("Location", "All")
+                        @*Search Dates:    <input type="date" value="@System.DateTime.Now" @Html.TextBox("startdate") - <input type="date" @Html.TextBox("enddate")*@
+                        <input type="submit" value="Filter" class="btn btn-UoBPurple  " />
+                        @*<input type="reset" onclick="location.reload();" value="Reset" class="btn btn-Swhite btn-block " />*@
+                        <button type="button" class="btn btn-Swhite ">
+                            @Html.ActionLink("Reset List", "Index", "Events", new { }, new { @class = " " })
+                        </button>
+
+
+
+                    </div>
+                    @*<div class="btn-group-justified btn-group-vertical" role="group" aria-label="Basic example">*@
+
+                    @*</div>*@
+                </p>
+            }
+
+        </div>
+    </div>
+
+    <br />
+
+
+    <div class="container ">
+        <div class="row">
+
+
+            @foreach (var item in Model)
+
+            {
+
+
+
+
+                <div class="col-md-3 text-center marginB ">
+                    <div class="table-bordered border-UoBPurple bg-Swhite  img-rounded">
+                        <h4 class="text-UoBPurple font1">@Html.DisplayFor(modelItem => item.EventName)</h4>
+
+
+                        <div class=" bg-white">
+                            <p class="font2">@Html.DisplayFor(modelItem => item.EventLocation)</p>
+                            <p class="font2">@Html.DisplayFor(modelItem => item.EventRoom)</p>
+                            <p class="font2">@Html.DisplayFor(modelItem => item.EventDate)</p>
+                        </div>
+                        <button type="button" class="btn btn-outline-UoBPurple ">
+                            @Html.ActionLink("Join", "Join", new { id = item.EventID }, new { @class = "text-light" })
+                        </button>
+
+                        <button type="button" class="btn btn-outline-Swhite">
+                            @Html.ActionLink("Details", "Details", new { id = item.EventID }, new { @class = "text-UoBPurple" })
+                        </button>
+
+                    </div>
+                </div>
+
+
+            }
+
+
+
+        </div>
+    </div>
+</div>
+ 
+
+
+
+
+
+
+
+    <script id="dsq-count-scr" src="//uob-event-hub.disqus.com/count.js" async></script>
+

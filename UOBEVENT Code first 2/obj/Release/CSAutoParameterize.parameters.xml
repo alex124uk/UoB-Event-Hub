@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=&quot;|DataDirectory|\aspnet-UOBEVENT-202001020529546.mdf&quot;;Initial Catalog=&quot;aspnet-UOBEVENT-202001020529546&quot;;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alex_\\source\\repos\\UOBEVENT\ Code\ first\ 2\\UOBEVENT\ Code\ first\ 2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="EventDBContext-Web.config Connection String" description="EventDBContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=aspnet-Events10;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\UOBEvent1.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Alex_\\source\\repos\\UOBEVENT\ Code\ first\ 2\\UOBEVENT\ Code\ first\ 2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EventDBContext']/@connectionString" />
+  </parameter>
+</parameters>
