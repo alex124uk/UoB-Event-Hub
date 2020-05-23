@@ -1,0 +1,91 @@
+﻿@model IEnumerable<UOBEVENT_Code_first_2.Models.Attending>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center border-UoBPurple ">
+    <img src="../Images/uobbanner2.jpg" class="img-rounded border-UoBPurple" style="width:80%;height:120%" />
+</div>
+
+
+<div class="container">
+    <h2 class="font1 text-UoBPurple">Your Upcoming Events</h2>
+</div>
+
+    @*<table class="table">
+        <tr class="font2 text-UoBPurple">
+            <th>
+                @Html.DisplayNameFor(model => model.Event.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.EventDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Event.EventTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.EventLocation)
+            </th>
+
+
+            <th></th>
+        </tr>*@
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 text-center marginB ">
+                <div class="table-bordered border-UoBPurple bg-Swhite  img-rounded">
+                    <h4 class="text-UoBPurple font1">@Html.DisplayFor(modelItem => item.Event.EventName)</h4>
+
+
+                    <div class=" bg-white">
+                        <p class="font2">@Html.DisplayFor(modelItem => item.Event.EventLocation)</p>
+                        <p class="font2">@Html.DisplayFor(modelItem => item.Event.EventRoom)</p>
+                        <p class="font2">@Html.DisplayFor(modelItem => item.Event.EventDate)</p>
+                    </div>
+                    <button type="button" class="btn btn-outline-UoBPurple ">
+                        @Html.ActionLink("Event Details", "Details", "Events", new { id = item.EventID }, new { @class = "text-dark" })
+                    </button>
+
+                    <button type="button" class="btn btn-outline-Swhite">
+                        @Html.ActionLink("Leave event", "Leave", new { id = item.AttendID }, new { @class = "text-UoBPurple" })
+                    </button>
+
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+    </table>
+
+    @*<tr class="font2">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Event.EventName)
+                </td>
+                <th>
+                    @Html.DisplayFor(model => item.Event.EventDate)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.Event.EventTime)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.Event.EventLocation)
+                </th>
+                <td>
+                        @Html.DisplayFor(modelItem => item.UserID)
+                    </td>
+                <td>
+                    <button type="button" class="btn btn-outline-UoBPurple ">
+                        @Html.ActionLink("Event Details", "Details", "Events", new { id = item.EventID }, new { @class = "text-dark" })
+                    </button>
+                    <button type="button" class="btn btn-outline-Swhite">
+                        @Html.ActionLink("Leave event", "Leave", new { id = item.AttendID }, new { @class = "text-UoBPurple" })
+                    </button>
+                </td>
+            </tr>
+        }*@

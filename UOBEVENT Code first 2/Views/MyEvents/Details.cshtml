@@ -1,0 +1,84 @@
+﻿@model UOBEVENT_Code_first_2.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventUserID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

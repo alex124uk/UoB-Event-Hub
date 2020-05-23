@@ -1,0 +1,39 @@
+﻿@model IEnumerable<UOBEVENT_Code_first_2.Models.Attending>
+
+@{
+    ViewBag.Title = "Guests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1 class="font1 text-UoBPurple text-center">Students attending </h1>
+<hr />
+<div class="container">
+    <table class="table">
+        <tr class="font2 text-UoBPurple">
+            <th>
+                Username of Attending Student
+            </th>
+            <th>
+                Attending Students Course
+            </th>
+            
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.UserID)</td>
+
+            <td>  @Html.DisplayFor(modelItem => item.UserCourse)</td>
+
+        </tr>
+
+        }
+        </table>
+
+
+
+

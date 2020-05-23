@@ -1,0 +1,83 @@
+﻿@model IEnumerable<UOBEVENT_Code_first_2.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center border-UoBPurple ">
+    <img src="../Images/uobbanner3.jpg" class="img-rounded border-UoBPurple" style="width:80%;height:120%" />
+</div>
+
+<div class="container">
+    <h2 class="font1 text-UoBPurple">Events you have created</h2>
+</div>
+
+<div class="container">
+    <table class="table">
+        <tr class="font2 text-UoBPurple">
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventLocation)
+            </th>
+       
+            <th>
+                @Html.DisplayNameFor(model => model.EventCategory)
+            </th>
+           
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="font2">
+                <td >
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventLocation)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventCategory)
+                </td>
+             
+                <td>
+
+
+                    <button type="button" class="btn btn-outline-UoBPurple ">
+                        @Html.ActionLink("Edit Event", "Edit", new { id = item.EventID })
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-Swhite">
+                        @Html.ActionLink("Event Details", "Details", "Events", new { id = item.EventID }, new { @class = "text-dark" })
+                    </button>
+                </td>
+                <td>
+
+                    <button type="button" class="btn btn-outline-Swhite">
+                        @Html.ActionLink("Cancel Event", "Delete", new { id = item.EventID }, new { @class = "text-UoBPurple" })
+                    </button>
+
+
+                </td>
+            </tr>
+        }
+</div>
+</table>
+
