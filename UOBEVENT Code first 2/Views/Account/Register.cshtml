@@ -45,6 +45,7 @@
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
         </div>
     </div>
+    <p>Before registrering an account please review our Privacy Policy  @Html.ActionLink("here", "Contact", "Home", new { }, new { @class = "text-UoBPurple font2" })</p>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />

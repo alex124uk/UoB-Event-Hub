@@ -176,6 +176,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005171815049_InitialCreate.cs" />
+    <Compile Include="Migrations\202005171815049_InitialCreate.Designer.cs">
+      <DependentUpon>202005171815049_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Misc\IdentityExtensions.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Attending.cs" />
@@ -236,13 +241,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Brighton1.jpg" />
-    <Content Include="Images\uobbanner2.jpg" />
-    <Content Include="Images\uobbanner3.jpg" />
-    <Content Include="Images\UOBCB.jpg" />
-    <Content Include="Images\UoBEventBanner.jpg" />
+    <Content Include="Images\BrightonCreated.jpg" />
+    <Content Include="Images\BrightonEvents.jpg" />
+    <Content Include="Images\BrightonHome.jpg" />
+    <Content Include="Images\BrightonJoined.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\UOBEVENTHUB - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -256,7 +261,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -315,7 +322,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -329,6 +335,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202005171815049_InitialCreate.resx">
+      <DependentUpon>202005171815049_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

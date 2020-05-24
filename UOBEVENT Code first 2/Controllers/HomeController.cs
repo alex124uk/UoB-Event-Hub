@@ -26,5 +26,15 @@ namespace UOBEVENT_Code_first_2.Controllers
 
             return View();
         }
+
+        public ActionResult Legal()
+        {
+            ViewBag.Message = "Privacy policy and Terms of Service";
+
+            return View();
+        }
+
+
+
     }
 }
